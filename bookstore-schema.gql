@@ -7,6 +7,9 @@ type Query {
     getAuthors: [String]
     getAuthorsByName(name: String):[String]
     getBooks: [Book]
+    getName: String
+    getFavFoods: [String]
+    addThis(a: Int, b: Int): Int
 }
 
 type Mutation {

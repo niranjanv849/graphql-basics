@@ -11,7 +11,8 @@ const schema = buildSchema(contents)
 const authors = [
     'Charles Dickens',
     'Jules Verne',
-    'Robert Frost'
+    'Robert Frost',
+    'Niranjan'
 ]
 
 const books = [
@@ -81,6 +82,16 @@ const booksWithResolvers = [
     }
 ]
 
+const foods = [
+    "chicken biriyani",
+    "veg biriyaani",
+    "mutton biriyani",
+    "prawn biriyani",
+    "egg biriyani",
+    "crow biriyani",
+    "fish biriyani",
+    "empty biriyani"
+]
 
 const resolvers = {
     getAuthors: () => authors,
@@ -92,7 +103,16 @@ const resolvers = {
     addBook: ({book}) => {
         console.log('book is ' + JSON.stringify(book))
         return book
-    }
+    },
+    getName: () => {
+        console.log(`selecting all names`);
+        return "Niranjan"
+    },
+    getFavFoods: () => {
+        console.log(`selecting favourite foods`);
+        return foods;
+    },
+    addThis: ({a,b}) => a+b
 }
 
 var app = express();
